@@ -18299,6 +18299,7 @@ var startDate = new Date();
 var startYear = (0, _dateFns.getYear)(startDate);
 var startMonth = (0, _dateFns.startOfMonth)(startDate);
 var endMonth = (0, _dateFns.endOfMonth)(startDate);
+alert(startDate);
 var result2 = (0, _dateFns.eachDayOfInterval)({
   start: startMonth,
   end: endMonth
@@ -18311,6 +18312,29 @@ result2.forEach(function (date) {
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var d = new Date();
 $(".js-month-name").html(monthNames[d.getMonth()] + " " + startYear); ////////////////////////////////
+
+var firstDay = (0, _dateFns.isMonday)(startMonth);
+var secondDay = (0, _dateFns.isTuesday)(startMonth);
+var thirdDay = (0, _dateFns.isWednesday)(startMonth);
+var fourthDay = (0, _dateFns.isThursday)(startMonth);
+var fifthDay = (0, _dateFns.isFriday)(startMonth);
+var sixthDay = (0, _dateFns.isSaturday)(startMonth);
+var seventhDay = (0, _dateFns.isSunday)(startMonth); // console.log("is monday? : " + firstDay)
+// console.log("is monday? : " + secondDay)
+
+if (secondDay == true) {
+  $(".js-calendar").prepend("<li>31</li>");
+} else if (thirdDay == true) {
+  $(".js-calendar").prepend("<li>30</li><li>31</li>");
+} else if (fourthDay == true) {
+  $(".js-calendar").prepend("<li>29</li><li>30</li><li>31</li>");
+} else if (fifthDay == true) {
+  $(".js-calendar").prepend("<li>28</li><li>29</li><li>30</li><li>31</li>");
+} else if (sixthDay == true) {
+  $(".js-calendar").prepend("<li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>");
+} else if (seventhDay == true) {
+  $(".js-calendar").prepend("<li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>");
+}
 
 $(document).on("click", ".next", function () {
   var addM = (0, _dateFns.addMonths)(startDate, 1);
@@ -18327,6 +18351,29 @@ $(document).on("click", ".next", function () {
   result2.forEach(function (date) {
     $(".js-calendar").append("<li>" + date.getDate() + "</li>");
   });
+  var firstDay = (0, _dateFns.isMonday)(startMonth);
+  var secondDay = (0, _dateFns.isTuesday)(startMonth);
+  var thirdDay = (0, _dateFns.isWednesday)(startMonth);
+  var fourthDay = (0, _dateFns.isThursday)(startMonth);
+  var fifthDay = (0, _dateFns.isFriday)(startMonth);
+  var sixthDay = (0, _dateFns.isSaturday)(startMonth);
+  var seventhDay = (0, _dateFns.isSunday)(startMonth); // console.log("is monday? : " + firstDay)
+  // console.log("is monday? : " + secondDay)
+
+  if (secondDay == true) {
+    $(".js-calendar").prepend("<li>31</li>");
+  } else if (thirdDay == true) {
+    $(".js-calendar").prepend("<li>30</li><li>31</li>");
+  } else if (fourthDay == true) {
+    $(".js-calendar").prepend("<li>29</li><li>30</li><li>31</li>");
+  } else if (fifthDay == true) {
+    $(".js-calendar").prepend("<li>28</li><li>29</li><li>30</li><li>31</li>");
+  } else if (sixthDay == true) {
+    $(".js-calendar").prepend("<li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>");
+  } else if (seventhDay == true) {
+    $(".js-calendar").prepend("<li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li>");
+  }
+
   console.log("start of month : " + startMonth);
   console.log("end of month : " + endMonth);
 });
@@ -18375,7 +18422,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56321" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60644" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
