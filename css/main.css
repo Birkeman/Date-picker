@@ -57,7 +57,7 @@ body {
   width: 420px;
 }
 
-.days li {
+.single-date {
   list-style-type: none;
   display: inline-block;
   width: 56px;
@@ -70,9 +70,37 @@ body {
   background-color: lightgrey;
 }
 
+.disabled {
+  color: #eceaea;
+}
+
+.enabled {
+  cursor: pointer;
+}
+
+.start-date, .end-date {
+  background-color: red;
+}
+
 .days li .active {
   padding: 5px;
   background: #1abc9c;
+}
+
+.valid-date:hover {
+  background-color: lightcoral;
+}
+
+.current-date {
+  background-color: lightblue;
+}
+
+.selected-days {
+  background-color: #fc5757;
+}
+
+.hovered:hover {
+  background-color: red;
 }
 
 /* Add media queries for smaller screens */
