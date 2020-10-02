@@ -3,47 +3,49 @@ ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;margin: 0px;padding: 0px;}
 
 .month {
-  width: 420px;
-  text-align: center;
+    width: 420px;
+    text-align: center;
 }
 
 .month ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .month ul li {
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: gray;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: gray;
 }
 
 .month .prev {
-  float: left;
+    float: left;
+    cursor: pointer;
 }
 
 .month .next {
-  float: right;
+    float: right;
+    cursor: pointer;
 }
 
 .weekdays {
-  margin: 0;
-  padding: 10px 0;
-  width: 420px;
+    margin: 0;
+    padding: 10px 0;
+    width: 420px;
 }
 
 .weekdays li {
-  display: inline-block;
-  width: 13%;
-  color: #666;
-  text-align: center;
+    display: inline-block;
+    width: 13%;
+    color: #666;
+    text-align: center;
 }
 
 .days {
-  padding: 10px 0;
-  margin: 0;
-  width: 420px;
+    padding: 10px 0;
+    margin: 0;
+    width: 420px;
 }
 
 .single-date {
@@ -68,8 +70,8 @@ body {font-family: Verdana, sans-serif;margin: 0px;padding: 0px;}
     background-color: red;
 }
 .days li .active {
-  padding: 5px;
-  background: #1abc9c;
+    padding: 5px;
+    background: #1abc9c;
 }
 .valid-date:hover{
     background-color: lightcoral;
@@ -85,14 +87,14 @@ body {font-family: Verdana, sans-serif;margin: 0px;padding: 0px;}
 }
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
+    .weekdays li, .days li {width: 13.1%;}
 }
 
 @media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 2px;}
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
 }
 
 @media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
+    .weekdays li, .days li {width: 12.2%;}
 }

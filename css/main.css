@@ -32,10 +32,12 @@ body {
 
 .month .prev {
   float: left;
+  cursor: pointer;
 }
 
 .month .next {
   float: right;
+  cursor: pointer;
 }
 
 .weekdays {
