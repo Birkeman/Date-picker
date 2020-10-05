@@ -61,5 +61,6 @@ let minusSix = subDays(startMonth,6)
     } else if(sixthDay == true){
         $(".js-calendar").append('<li class="single-date disabled fixed" data-date="'+ format(minusSix, "MM.dd.yyy")+'">'+getDate(minusSix)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusFive, "MM.dd.yyy")+'">'+getDate(minusFive)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusFour, "MM.dd.yyy")+'">'+getDate(minusFour)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusThree, "MM.dd.yyy")+'">'+getDate(minusThree)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusTwo, "MM.dd.yyy")+'">'+getDate(minusTwo)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusOne, "MM.dd.yyy")+'">'+getDate(minusOne)+'</li>')
     }
-
+    $(".start-date").nextUntil(".end-date").addClass("selected-days")
+    $(".end-date").prevUntil(".start-date").addClass("selected-days")
 }

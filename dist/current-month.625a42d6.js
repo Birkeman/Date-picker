@@ -73339,6 +73339,9 @@ window.currentMonth = function () {
   } else if (sixthDay == true) {
     $(".js-calendar").append('<li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusSix, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusSix) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusFive, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusFive) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusFour, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusFour) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusThree, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusThree) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusTwo, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusTwo) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusOne, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusOne) + '</li>');
   }
+
+  $(".start-date").nextUntil(".end-date").addClass("selected-days");
+  $(".end-date").prevUntil(".start-date").addClass("selected-days");
 };
 },{"date-fns":"node_modules/date-fns/esm/index.js","lodash":"node_modules/lodash/lodash.js","date-fns/locale":"node_modules/date-fns/esm/locale/index.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -73368,7 +73371,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50933" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

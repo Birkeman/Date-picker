@@ -12,6 +12,7 @@ window.selectDate = function(){
         return
     }
     if (clicks % 2 == 0 && $(this).hasClass("enabled")){
+
         window.beforeToday();
         $(".enabled").removeClass("selected-days")
         $(".enabled").removeClass("start-date end-date");
@@ -26,6 +27,8 @@ window.selectDate = function(){
         $(this).addClass("end-date")
 
         $(".start-date").nextUntil(".end-date").addClass("selected-days")
+        $(".end-date").prevUntil(".start-date").addClass("selected-days")
+        $(".fixed").removeClass("selected-days")
         $(this).prevAll().removeClass("disabled").addClass("enabled hovered")
         $(".fixed").removeClass("hovered")
         window.beforeToday();
@@ -48,6 +51,8 @@ window.selectDate = function(){
         // var lightEnd = lightFormat(secondDate, 'dd.MM.yyyy')
         // $(".js-end-date").val(lightEnd)
         // $(this).css("background-color", "red")
+
+
     }
     ++clicks;
     $(".js-calendar .single-date").each(function(){
@@ -55,5 +60,4 @@ window.selectDate = function(){
             $(this).addClass("hovered");
         }
     })
-
 };

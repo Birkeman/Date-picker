@@ -13,7 +13,8 @@ window.getPastDays = function(){
     $(".js-month-name").attr("data-helper", m);
     $(".js-month-var").val(m);
     $(".js-calendar").html("")
-
+    var startSelected = $(".js-start-date").val()
+    var endSelected = $(".js-end-date").val()
     var startMonth = startOfMonth(monthSub)
     var endMonth = endOfMonth(monthSub)
     var resultX = eachDayOfInterval({
@@ -70,4 +71,11 @@ window.getPastDays = function(){
         window.beforeToday();
         /////////////////////////////////////////////
         $(".enabled").click(selectDate);
+
+        /////GET SELECTED DATES///////
+        $("li[data-date='" + startSelected +"']").addClass("start-date");
+        $("li[data-date='" + endSelected +"']").addClass("end-date");
+        $(".start-date").nextUntil(".end-date").addClass("selected-days")
+        $(".end-date").prevUntil(".start-date").addClass("selected-days")
+        /////////////////////////////////////////////
 }

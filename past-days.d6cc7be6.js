@@ -18301,6 +18301,8 @@ window.getPastDays = function () {
   $(".js-month-name").attr("data-helper", m);
   $(".js-month-var").val(m);
   $(".js-calendar").html("");
+  var startSelected = $(".js-start-date").val();
+  var endSelected = $(".js-end-date").val();
   var startMonth = (0, _dateFns.startOfMonth)(monthSub);
   var endMonth = (0, _dateFns.endOfMonth)(monthSub);
   var resultX = (0, _dateFns.eachDayOfInterval)({
@@ -18355,7 +18357,12 @@ window.getPastDays = function () {
 
   window.beforeToday(); /////////////////////////////////////////////
 
-  $(".enabled").click(selectDate);
+  $(".enabled").click(selectDate); /////GET SELECTED DATES///////
+
+  $("li[data-date='" + startSelected + "']").addClass("start-date");
+  $("li[data-date='" + endSelected + "']").addClass("end-date");
+  $(".start-date").nextUntil(".end-date").addClass("selected-days");
+  $(".end-date").prevUntil(".start-date").addClass("selected-days"); /////////////////////////////////////////////
 };
 },{"date-fns":"node_modules/date-fns/esm/index.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -18385,7 +18392,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50933" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

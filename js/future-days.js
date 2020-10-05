@@ -2,8 +2,10 @@ import { format, getDate, addMonths, getYear, startOfMonth, endOfMonth, eachDayO
 import { isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday } from 'date-fns'
 import { getUnixTime, formatISO, parseISO, isFuture } from 'date-fns'
 window.getFutureDays = function(){
-    var startDate = new Date();
 
+
+
+    var startDate = new Date();
     var addM = addMonths(startDate, 1);
     var addY = getYear(addM);
     startDate = addM;
@@ -13,6 +15,8 @@ window.getFutureDays = function(){
     //     start: startMonth,
     //     end: endMonth
     // });
+    var startSelected = $(".js-start-date").val()
+    var endSelected = $(".js-end-date").val()
 
 
 
@@ -96,5 +100,16 @@ window.getFutureDays = function(){
         ////////////////DISABLE DATES BEFORE TODAY///
         window.beforeToday();
         /////////////////////////////////////////////
+
+        ////////////////SELECT DATE///
         $(".enabled").click(selectDate);
+        /////////////////////////////////////////////
+
+        /////IF SELECTED DATES EXIST///////
+        $("li[data-date='" + startSelected +"']").addClass("start-date");
+        $("li[data-date='" + endSelected +"']").addClass("end-date");
+        $(".start-date").nextUntil(".end-date").addClass("selected-days")
+        $(".end-date").prevUntil(".start-date").addClass("selected-days")
+        $(".fixed").removeClass("selected-days")
+        /////////////////////////////////////////////
 }
