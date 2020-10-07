@@ -1,25 +1,13 @@
-import { format, getDate, addMonths, getYear, startOfMonth, endOfMonth, eachDayOfInterval, subDays, getDaysInMonth } from 'date-fns'
+import { format, getDate, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, subDays } from 'date-fns'
 import { isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday } from 'date-fns'
-import { getUnixTime, formatISO, parseISO, isFuture } from 'date-fns'
+import { formatISO, parseISO } from 'date-fns'
 window.getFutureDays = function(){
 
-
-
-    var startDate = new Date();
-    var addM = addMonths(startDate, 1);
-    var addY = getYear(addM);
-    startDate = addM;
-    // var startMonth = startOfMonth(startDate);
-    // var endMonth = endOfMonth(startDate);
-    // var result2 = eachDayOfInterval({
-    //     start: startMonth,
-    //     end: endMonth
-    // });
+    // var startDate = new Date();
+    // var addM = addMonths(startDate, 1);
+    // startDate = addM;
     var startSelected = $(".js-start-date").val()
     var endSelected = $(".js-end-date").val()
-
-
-
     var currentMonthISO = $(".js-month-var").val();
     var currentMonth = parseISO(currentMonthISO)
     var monthAdd = addMonths(currentMonth,1)
@@ -36,24 +24,9 @@ window.getFutureDays = function(){
         end: endMonth
     });
 
-    console.log("----TEST----"+resultX)
-    // var x = $(".js-month-var").val()
-    // console.log("x = " + x)
-    // var nextMonth = x;
-    // console.log("nextMonth = " + nextMonth)
-    // var monthName = format(nextMonth, "MMMM yyyy")
-    // $(".js-month-name").attr("data-helper", x)
-    // $(".js-month-name").html(monthName);
-
-    // const monthNames = ["January", "February", "March", "April", "May", "June",
-    // "July", "August", "September", "October", "November", "December"
-    // ];
-    // $(".js-month-name").html(monthNames[addM.getMonth()] + " " + addY);
     $(".js-calendar").html("")
 
     let firstDay = isMonday(startMonth)
-    console.log("FIRST DAY : "+firstDay)
-    console.log("START MONTH : "+startMonth)
     let secondDay = isTuesday(startMonth)
     let thirdDay = isWednesday(startMonth)
     let fourthDay = isThursday(startMonth)
@@ -81,15 +54,8 @@ window.getFutureDays = function(){
         $(".js-calendar").append('<li class="single-date disabled fixed" data-date="'+ format(minusSix, "MM.dd.yyy")+'">'+getDate(minusSix)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusFive, "MM.dd.yyy")+'">'+getDate(minusFive)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusFour, "MM.dd.yyy")+'">'+getDate(minusFour)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusThree, "MM.dd.yyy")+'">'+getDate(minusThree)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusTwo, "MM.dd.yyy")+'">'+getDate(minusTwo)+'</li><li class="single-date disabled fixed" data-date="'+ format(minusOne, "MM.dd.yyy")+'">'+getDate(minusOne)+'</li>')
     }
         //////DISPLAY EACH DAY IN MONTH/////
-        // result2.forEach(date => {
-        //     var i = getUnixTime(date);
-        //     $(".js-calendar").append("<li class='single-date' data-date="+ formatISO(date, { representation: "date" }) +">"+date.getDate()+"</li>")
-        //     console.log(date.getUTCDate())
-        // });
-                resultX.forEach(date => {
-            var i = getUnixTime(date);
+        resultX.forEach(date => {
             $(".js-calendar").append("<li class='single-date' data-date="+ formatISO(date, { representation: "date" }) +">"+date.getDate()+"</li>")
-            console.log(date.getUTCDate())
         });
         ////////////////////////////////////
         

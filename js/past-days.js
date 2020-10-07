@@ -1,6 +1,6 @@
-import { format, getDate, subMonths, getYear, startOfMonth, endOfMonth, eachDayOfInterval, subDays } from 'date-fns'
+import { format, getDate, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, subDays } from 'date-fns'
 import { isMonday, isTuesday, isWednesday, isThursday, isFriday, isSaturday } from 'date-fns'
-import { getUnixTime, formatISO, parseISO, isFuture } from 'date-fns'
+import { getUnixTime, formatISO, parseISO } from 'date-fns'
 
 window.getPastDays = function(){
 
@@ -21,10 +21,6 @@ window.getPastDays = function(){
         start: startMonth,
         end: endMonth
     });
-    // const monthNames = ["January", "February", "March", "April", "May", "June",
-    // "July", "August", "September", "October", "November", "December"
-    // ];
-    // $(".js-month-name").html(monthNames[subM.getMonth()] + " " + addY);
 
     let firstDay = isMonday(startMonth)
     console.log("FIRST DAY : "+firstDay)
