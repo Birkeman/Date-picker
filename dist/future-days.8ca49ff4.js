@@ -18292,16 +18292,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _dateFns = require("date-fns");
 
 window.getFutureDays = function () {
-  var startDate = new Date();
-  var addM = (0, _dateFns.addMonths)(startDate, 1);
-  var addY = (0, _dateFns.getYear)(addM);
-  startDate = addM; // var startMonth = startOfMonth(startDate);
-  // var endMonth = endOfMonth(startDate);
-  // var result2 = eachDayOfInterval({
-  //     start: startMonth,
-  //     end: endMonth
-  // });
-
+  // var startDate = new Date();
+  // var addM = addMonths(startDate, 1);
+  // startDate = addM;
   var startSelected = $(".js-start-date").val();
   var endSelected = $(".js-end-date").val();
   var currentMonthISO = $(".js-month-var").val();
@@ -18318,22 +18311,8 @@ window.getFutureDays = function () {
     start: startMonth,
     end: endMonth
   });
-  console.log("----TEST----" + resultX); // var x = $(".js-month-var").val()
-  // console.log("x = " + x)
-  // var nextMonth = x;
-  // console.log("nextMonth = " + nextMonth)
-  // var monthName = format(nextMonth, "MMMM yyyy")
-  // $(".js-month-name").attr("data-helper", x)
-  // $(".js-month-name").html(monthName);
-  // const monthNames = ["January", "February", "March", "April", "May", "June",
-  // "July", "August", "September", "October", "November", "December"
-  // ];
-  // $(".js-month-name").html(monthNames[addM.getMonth()] + " " + addY);
-
   $(".js-calendar").html("");
   var firstDay = (0, _dateFns.isMonday)(startMonth);
-  console.log("FIRST DAY : " + firstDay);
-  console.log("START MONTH : " + startMonth);
   var secondDay = (0, _dateFns.isTuesday)(startMonth);
   var thirdDay = (0, _dateFns.isWednesday)(startMonth);
   var fourthDay = (0, _dateFns.isThursday)(startMonth);
@@ -18359,19 +18338,12 @@ window.getFutureDays = function () {
   } else if (sixthDay == true) {
     $(".js-calendar").append('<li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusSix, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusSix) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusFive, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusFive) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusFour, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusFour) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusThree, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusThree) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusTwo, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusTwo) + '</li><li class="single-date disabled fixed" data-date="' + (0, _dateFns.format)(minusOne, "MM.dd.yyy") + '">' + (0, _dateFns.getDate)(minusOne) + '</li>');
   } //////DISPLAY EACH DAY IN MONTH/////
-  // result2.forEach(date => {
-  //     var i = getUnixTime(date);
-  //     $(".js-calendar").append("<li class='single-date' data-date="+ formatISO(date, { representation: "date" }) +">"+date.getDate()+"</li>")
-  //     console.log(date.getUTCDate())
-  // });
 
 
   resultX.forEach(function (date) {
-    var i = (0, _dateFns.getUnixTime)(date);
     $(".js-calendar").append("<li class='single-date' data-date=" + (0, _dateFns.formatISO)(date, {
       representation: "date"
     }) + ">" + date.getDate() + "</li>");
-    console.log(date.getUTCDate());
   }); ////////////////////////////////////
   ////////////////GET CURRENT DATE/////////////
 
@@ -18418,7 +18390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50933" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55892" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

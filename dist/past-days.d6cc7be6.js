@@ -18308,11 +18308,7 @@ window.getPastDays = function () {
   var resultX = (0, _dateFns.eachDayOfInterval)({
     start: startMonth,
     end: endMonth
-  }); // const monthNames = ["January", "February", "March", "April", "May", "June",
-  // "July", "August", "September", "October", "November", "December"
-  // ];
-  // $(".js-month-name").html(monthNames[subM.getMonth()] + " " + addY);
-
+  });
   var firstDay = (0, _dateFns.isMonday)(startMonth);
   console.log("FIRST DAY : " + firstDay);
   console.log("START MONTH : " + startMonth);
@@ -18392,7 +18388,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50933" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55892" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

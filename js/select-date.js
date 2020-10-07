@@ -25,6 +25,8 @@ window.selectDate = function(){
         $(this).prevAll().removeClass("disabled").addClass("enabled hovered")
         $(".fixed").removeClass("hovered")
         window.beforeToday();
+        $(".disabled").removeClass("hovered")
+
     }
     ++clicks;
     $(".js-calendar .single-date").each(function(){
